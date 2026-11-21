@@ -13,7 +13,7 @@ RUTA_DATOS = RAIZ / "datos"
 URL_API = os.getenv("URL_API", "http://localhost:8000")
 
 # Clave para firmar los tokens JWT (en produccion va en una variable de entorno)
-CLAVE_JWT = os.getenv("CLAVE_JWT", "cambiar-esta-clave")
+CLAVE_JWT = os.getenv("CLAVE_JWT", "clave-de-desarrollo-cambiar-en-produccion-2026")
 MINUTOS_TOKEN = 60
 
 # API externa publica de tipo de cambio
