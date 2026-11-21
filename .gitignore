@@ -6,3 +6,4 @@ venv/
 db/abastecimiento.db
 modelos/artefactos/*.joblib
 .DS_Store
+datos/cargas/
