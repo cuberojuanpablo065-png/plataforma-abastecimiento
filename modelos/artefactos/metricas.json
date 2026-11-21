@@ -1,0 +1,39 @@
+{
+  "pronostico": {
+    "elegido": "Random Forest",
+    "comparacion": {
+      "Regresión lineal": {
+        "mae": 5.51,
+        "r2": 0.764
+      },
+      "Random Forest": {
+        "mae": 5.12,
+        "r2": 0.773
+      }
+    },
+    "filas_entrenamiento": 6240,
+    "filas_prueba": 1560
+  },
+  "riesgo": {
+    "elegido": "Random Forest",
+    "comparacion": {
+      "Regresión logística": {
+        "accuracy": 0.873,
+        "precision": 0.463,
+        "recall": 0.876,
+        "f1": 0.606,
+        "auc": 0.94
+      },
+      "Random Forest": {
+        "accuracy": 0.906,
+        "precision": 0.552,
+        "recall": 0.812,
+        "f1": 0.657,
+        "auc": 0.955
+      }
+    },
+    "porcentaje_quiebres": 0.111,
+    "filas_entrenamiento": 6120,
+    "filas_prueba": 1530
+  }
+}
