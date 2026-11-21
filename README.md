@@ -36,16 +36,19 @@ plataforma-abastecimiento/
 python -m venv venv
 source venv/bin/activate        # Windows: venv\Scripts\activate
 pip install -r requirements.txt
+python -m datos.generar_datos    # genera los CSV simulados
 python -m db.conexion           # crea la base de datos
 ```
 
 ## Ejecución
 
+> En Windows se usa `python -m` para evitar que el sistema bloquee los `.exe` del entorno virtual.
+
 En dos terminales distintas:
 
 ```bash
-uvicorn api.main:app --reload   # API en http://localhost:8000/docs
-streamlit run app/main.py       # App en http://localhost:8501
+python -m uvicorn api.main:app --reload   # API en http://localhost:8000/docs
+python -m streamlit run app/main.py       # App en http://localhost:8501
 ```
 
 ## Componentes
