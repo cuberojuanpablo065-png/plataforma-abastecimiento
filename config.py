@@ -10,7 +10,7 @@ RUTA_ARTEFACTOS = RAIZ / "modelos" / "artefactos"
 RUTA_DATOS = RAIZ / "datos"
 
 # URL de nuestra API propia (FastAPI)
-URL_API = os.getenv("URL_API", "http://localhost:8000")
+URL_API = os.getenv("URL_API", "http://127.0.0.1:8000")
 
 # Clave para firmar los tokens JWT (en produccion va en una variable de entorno)
 CLAVE_JWT = os.getenv("CLAVE_JWT", "clave-de-desarrollo-cambiar-en-produccion-2026")

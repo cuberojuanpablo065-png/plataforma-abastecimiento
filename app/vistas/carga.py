@@ -1,5 +1,8 @@
 import streamlit as st
 
+import pandas as pd
+
+from app.vistas.utilidades import a_hora_local
 from config import RUTA_DATOS
 from db import crud
 from servicios import procesamiento
@@ -48,6 +51,8 @@ def mostrar():
 
         st.session_state.datos = limpio
         st.session_state.carga_id = carga_id
+        # Se borran resultados viejos que eran de otro archivo
+        st.session_state.pop("evaluacion_riesgo", None)
         st.success("Carga guardada ✅")
 
 
@@ -55,8 +60,12 @@ def mostrar_cargas_anteriores():
     cargas = crud.listar_cargas(st.session_state.usuario_id)
     if cargas:
         st.subheader("Cargas anteriores")
+        tabla = pd.DataFrame(cargas)
+        tabla["creado_en"] = a_hora_local(tabla["creado_en"]).dt.strftime("%Y-%m-%d %H:%M")
         st.dataframe(
-            [{"Archivo": c["nombre_archivo"], "Filas": c["filas"],
-              "Descartadas": c["filas_descartadas"], "Fecha": c["creado_en"]} for c in cargas],
+            tabla[["nombre_archivo", "filas", "filas_descartadas", "creado_en"]].rename(columns={
+                "nombre_archivo": "Archivo", "filas": "Filas",
+                "filas_descartadas": "Descartadas", "creado_en": "Fecha"}),
+            hide_index=True,
             width="stretch",
         )
