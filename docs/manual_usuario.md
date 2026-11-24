@@ -9,20 +9,14 @@ Antes de empezar, la API y la aplicación deben estar corriendo (ver "Ejecución
 
 La sesión dura 60 minutos. Para salir, usá **Cerrar sesión** en el menú lateral.
 
-<!-- captura: docs/capturas/01_login.png -->
-
 ## 2. Inicio
 Muestra cuántos archivos cargaste, cuántos análisis de riesgo guardaste, el tipo de cambio del día, la venta del archivo actual en colones y dólares, y si la API de modelos está conectada.
-
-<!-- captura: docs/capturas/02_inicio.png -->
 
 ## 3. Cargar datos
 1. Andá a **Cargar datos**.
 2. Subí un archivo CSV o Excel con las columnas `fecha, tienda, sku, unidades_vendidas, inventario, precio` (y opcionalmente `promocion`). Para probar podés usar `datos/ventas_ejemplo.csv`.
 3. Revisá el resumen de la limpieza: duplicados, datos vacíos y negativos eliminados.
 4. Clic en **Guardar carga**.
-
-<!-- captura: docs/capturas/03_carga.png -->
 
 ## 4. Pronóstico de demanda
 1. Andá a **Pronóstico de demanda**.
@@ -31,8 +25,6 @@ Muestra cuántos archivos cargaste, cuántos análisis de riesgo guardaste, el t
 4. Si querés conservarlo, clic en **Guardar pronóstico**.
 
 En **¿Qué tan bueno es el modelo?** se ven las métricas de los algoritmos comparados.
-
-<!-- captura: docs/capturas/04_pronostico.png -->
 
 ## 5. Riesgo de quiebre
 **Evaluar el archivo cargado:**
@@ -45,14 +37,10 @@ En **¿Qué tan bueno es el modelo?** se ven las métricas de los algoritmos com
 
 Niveles: **alto** (60% o más), **medio** (de 30% a 60%), **bajo** (menos de 30%).
 
-<!-- captura: docs/capturas/05_riesgo.png -->
-
 ## 6. Historial
 1. Andá a **Historial** y filtrá por tipo si querés.
 2. Para **editar**: elegí un análisis, escribí una nota y clic en **Guardar nota**.
 3. Para **eliminar**: elegí un análisis, marcá la confirmación y clic en **Eliminar**.
-
-<!-- captura: docs/capturas/06_historial.png -->
 
 ## Mensajes comunes
 
@@ -63,3 +51,17 @@ Niveles: **alto** (60% o más), **medio** (de 30% a 60%), **bajo** (menos de 30%
 | "Faltan columnas: …" | Revisar que el archivo tenga las columnas obligatorias |
 | "Tu sesión expiró" | Volver a iniciar sesión |
 | Tipo de cambio "No disponible" | Sin internet o la API externa no respondió; el resto funciona igual |
+
+## Capturas de pantalla
+
+Están en la carpeta `docs/capturas`:
+
+| Archivo | Pantalla |
+|---|---|
+| `Screenshot 2026-11-22 183055.png` | Inicio de sesión |
+| `Screenshot 2026-11-22 180719.png` | Inicio (tipo de cambio y estado de la API) |
+| `Screenshot 2026-11-22 181029.png` | Formulario de pronóstico |
+| `Screenshot 2026-11-22 181121.png` | Resultado y gráfico del pronóstico |
+| `Screenshot 2026-11-22 181238.png` | Riesgo promedio por tienda |
+| `Screenshot 2026-11-22 181230.png` | Detalle de riesgo de quiebre |
+| `Screenshot 2026-11-22 182251.png` | Historial de análisis |

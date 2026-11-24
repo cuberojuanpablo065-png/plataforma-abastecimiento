@@ -3,7 +3,7 @@
 Plataforma web para **pronosticar la demanda** y **detectar el riesgo de quiebre de inventario** por tienda y SKU, a partir de archivos de ventas e inventario.
 
 Prueba de Suficiencia — Programación Web, LEAD University.
-Autor: Juan Pablo Cubero
+Autor: Juan Pablo Cubero Torres
 
 ## Problema que resuelve
 
@@ -199,9 +199,24 @@ CRUD completo en `db/crud.py`: crear (usuarios, cargas, análisis), leer (listar
 - Comparación de métricas entre algoritmos.
 - Historial de análisis por día.
 
-## Manual de uso
+## Problemas comunes al instalar (Windows)
 
-Ver [docs/manual_usuario.md](docs/manual_usuario.md).
+| Problema | Solución |
+|---|---|
+| `running scripts is disabled` al activar el entorno | `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` |
+| `An Application Control policy has blocked this file` | Ejecutar con `python -m streamlit ...` / `python -m uvicorn ...` |
+| La app tarda en responder | Verificar que `URL_API` en `config.py` sea `http://127.0.0.1:8000` |
+| "Modelos no entrenados" | `python -m modelos.entrenar` |
+
+## Entregables
+
+| Entregable | Ubicación |
+|---|---|
+| Código fuente | Este repositorio |
+| README con instrucciones de despliegue | Este archivo |
+| Capturas de pantalla | [docs/capturas](docs/capturas) |
+| Manual de uso básico | [docs/manual_usuario.md](docs/manual_usuario.md) |
+| Aplicación desplegada (opcional) | No incluida: se ejecuta localmente |
 
 ## Créditos
 
